@@ -2,4 +2,5 @@
 https://flassy.xyz  
 https://github.com/Shawey/GoogleFormsBot
 
-Edit the config.ini file and you are good to go!
+## How to use: ##
+Edit the config.ini file and change the *url* and the *formData*
