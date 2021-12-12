@@ -12,6 +12,6 @@ https://github.com/Shawey/GoogleFormsBot
 ## How to use: ##
 Edit the config.ini file and change the ***url*** and the ***formData***
 
-## Why is it detected as a virus?: ##
+## Why is it detected as a virus: ##
 Some antivirus incorrectly identified this bot as a malicious file.  
 If you are scared, you can always copy the code and run it by yourself.
