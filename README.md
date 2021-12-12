@@ -2,7 +2,7 @@
 https://flassy.xyz  
 https://github.com/Shawey/GoogleFormsBot
 
-## Requirement: ##
+## Requirements: ##
 ***os*** (Default)  
 ***ast*** (Default)  
 ***configparser*** (https://pypi.org/project/configparser/)
