@@ -40,7 +40,7 @@ elif proxies == 'n':
 else:
   quit()
 
-answersNum = int(input('\n• How many answer do you want to send? (0 will send requests indefinitely) :\n» '))
+answersNum = int(input('\n• How many answers do you want to send? (0 will send requests indefinitely) :\n» '))
 
 if proxies == 'n':
   threadsNum = int(input('''
