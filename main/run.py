@@ -16,7 +16,7 @@ print ('''
    /_/   /_/\__,_/____/____/\__, /  
                            /____/   
 
-      Google Forms Bot v1.1.0
+      Google Forms Bot v1.1.1
         https://flassy.xyz/\n''')
 
 proxies = input('• Do you want to use proxies? [y/n] :\n» ')
@@ -36,11 +36,11 @@ if proxies == 'y':
       i += 1
     pl = [item.replace('\n', '') for item in pl]
 elif proxies == 'n':
-  pl = ['00.00.00.00:0000']
+  pl = ['null']
 else:
   quit()
 
-awnsersNum = int(input('\n• How many awnser do you want to send? (0 will send requests indefinitely) :\n» '))
+answersNum = int(input('\n• How many answer do you want to send? (0 will send requests indefinitely) :\n» '))
 
 if proxies == 'n':
   threadsNum = int(input('''
@@ -58,6 +58,6 @@ else:
 print('\n• Starting...')
 
 from main import run
-run(awnsersNum, threadsNum, url, formData, pl)
-input('• Finished sending awnsers, press enter to exit :\n» ')
+run(answersNum, threadsNum, url, formData, pl)
+input('• Finished sending answers, press enter to exit :\n» ')
 quit()
