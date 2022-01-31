@@ -1,5 +1,5 @@
 # GoogleFormsBot
-https://flassy.xyz  
+http://flassy.xyz  
 https://github.com/Shawey/GoogleFormsBot
 
 ## Requirements: ##
