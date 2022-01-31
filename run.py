@@ -29,7 +29,7 @@ print('''
    /_/   /_/\__,_/____/____/\__, /  
                            /____/   
 
-      Google Forms Bot v1.1.1
+      Google Forms Bot v1.2.0
         https://flassy.xyz/\n''')
 
 proxies = input('• Do you want to use proxies? [y/n] :\n» ')
