@@ -7,7 +7,7 @@ https://github.com/Shawey/GoogleFormsBot
 ***ast*** (Default)  
 ***threading*** (Default)  
 ***random*** (Default)  
-***configparser*** (https://pypi.org/project/configparser/)  
+***yaml*** (https://pypi.org/project/PyYAML/)  
 ***requests*** (https://pypi.org/project/requests/)
 
 ## How to use: ##
