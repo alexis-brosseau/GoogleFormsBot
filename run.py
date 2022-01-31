@@ -15,9 +15,10 @@ os.chdir(rPath)
 with open('config.yaml') as configFile:
     config = yaml.load(configFile, Loader=yaml.FullLoader)
 url = config['url']
-formData = config['formData']
-if formData[1] != '{':
+try:
     formData = dict(urllib.parse.parse_qsl(config['formData']))
+except:
+    formData = config['formData']
 
 # Run
 print('''
