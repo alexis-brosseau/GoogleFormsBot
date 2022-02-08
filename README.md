@@ -1,6 +1,4 @@
 # GoogleFormsBot
-https://flassy.xyz  
-https://github.com/Shawey/GoogleFormsBot
 
 ## How to use: ##
 
