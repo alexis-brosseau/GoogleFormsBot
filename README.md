@@ -2,7 +2,7 @@
 
 ## Instalation: ##
 
-Simply Install
+Simply download the last release, unzip the file and launch *GoogleFormsBot.py*. By launching the bot for the first time, all the requirements are going to be downloaded.
 
 ## Features: ##
 
