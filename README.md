@@ -1,11 +1,11 @@
 # GoogleFormsBot
 ## Features: ##
 
-1. **Multithreading**
+1. Multithreading
 
-2. **Proxies**
+2. Proxies
 
-3. **Unparsed FormData**
+3. Unparsed FormData
 
 ## How to use: ##
 
