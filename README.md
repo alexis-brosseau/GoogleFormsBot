@@ -1,14 +1,14 @@
 # GoogleFormsBot
 
-## Instalation: ##
-
-Simply download the last release, unzip the file and launch *GoogleFormsBot.py*. By launching the bot for the first time, all the requirements are going to be downloaded.
-
 ## Features: ##
 
 1. Multithreading
 2. Proxies
 3. Unparsed FormData
+
+## Instalation: ##
+
+Simply download the last release, unzip the file and launch *GoogleFormsBot.py*. By launching the bot for the first time, all the requirements are going to be downloaded.
 
 ## How to use: ##
 
