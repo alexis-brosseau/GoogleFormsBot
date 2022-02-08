@@ -1,16 +1,16 @@
-#GoogleFormsBot
+# GoogleFormsBot
 
-##Instalation:##
+## Instalation: ##
 
 Simply Install
 
-##Features:##
+## Features: ##
 
 1. Multithreading
 2. Proxies
 3. Unparsed FormData
 
-##How to use:##
+## How to use: ##
 
 1. Edit the config.yaml file and change the ***url*** and the ***formData***.
 2. Put your list of proxies inside the proxylist.txt file. (**OPTIONAL**)
