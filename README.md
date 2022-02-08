@@ -2,14 +2,6 @@
 https://flassy.xyz  
 https://github.com/Shawey/GoogleFormsBot
 
-## Requirements: ##
-***os*** (Default)  
-***ast*** (Default)  
-***threading*** (Default)  
-***random*** (Default)  
-***pyyaml*** (https://pypi.org/project/PyYAML/)  
-***requests*** (https://pypi.org/project/requests/)
-
 ## How to use: ##
 
 1. Edit the config.yaml file and change the ***url*** and the ***formData***.
