@@ -52,7 +52,7 @@ elif proxies == 'n':
 else:
     quit()
 
-answersMAx = int(
+answersMax = int(
     input(
         '\n• How many answers do you want to send? (0 will send requests indefinitely) :\n» '
     ))
@@ -73,6 +73,6 @@ else:
 
 print('\n• Starting...')
 
-run(answersMAx, threadsNum, url, formData, pl)
+run(answersMax, threadsNum, url, formData, pl)
 input('• Finished sending answers, press enter to exit :\n» ')
 quit()
