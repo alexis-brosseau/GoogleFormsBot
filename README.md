@@ -1,4 +1,4 @@
-![alt text](https://i.imgur.com/98Tdbcy.png)
+![alt text](https://i.imgur.com/Hcw6K1B.png)
 
 ## Features: ##
 
