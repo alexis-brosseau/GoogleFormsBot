@@ -11,16 +11,7 @@ elif __file__:
     rPath = os.path.dirname(__file__)
 os.chdir(rPath)
 
-# Load config
-with open('config.yaml') as configFile:
-    config = yaml.load(configFile, Loader=yaml.FullLoader)
-url = config['url']
-try:
-    formData = dict(urllib.parse.parse_qsl(config['formData']))
-except:
-    formData = config['formData']
-
-# Run
+# Launch
 print('''
        ________                     
       / ____/ /___ _____________  __
@@ -29,16 +20,33 @@ print('''
    /_/   /_/\__,_/____/____/\__, /  
                            /____/   
 
-      Google Forms Bot v1.2.0
+      Google Forms Bot v1.2.1
         https://flassy.xyz/\n''')
 
+# Load config
+try :
+    with open('config.yaml') as configFile:
+        config = yaml.load(configFile, Loader=yaml.FullLoader)
+except FileNotFoundError:
+    input('• [Error] Config file not found, press any key to exit :')
+    sys.exit()
+except yaml.parser.ParserError:
+    input('• [Error] The url or formData is not valid, press any key to exit :')
+    sys.exit()
+url = config['url']
+try :
+    formData = dict(urllib.parse.parse_qsl(config['formData']))
+except AttributeError:
+    formData = config['formData']
+
+# Proxies
 proxies = input('• Do you want to use proxies? [y/n] :\n» ')
+
+pl = []
+
 if proxies == 'y':
 
-    pl = []
-    pf = open('proxylist.txt', 'r')
-
-    for line in pf:
+    for line in open('proxylist.txt', 'r'):
         pl.insert(0, line)
     pl = [item.replace('\n', '') for item in pl]
 
@@ -46,20 +54,15 @@ if proxies == 'y':
         input(
             '\n[WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
         )
+elif(proxies != 'n'):
+    sys.exit()
 
-elif proxies == 'n':
-    pl = []
-else:
-    quit()
+# Number of awnsers
+answersMax = int(input('\n• How many answers do you want to send? (0 will send requests indefinitely) :\n» '))
 
-answersMAx = int(
-    input(
-        '\n• How many answers do you want to send? (0 will send requests indefinitely) :\n» '
-    ))
-
+# Number of treads
 if not pl:
-    threadsNum = int(
-        input('''
+    threadsNum = int(input('''
   • How many threads do you want to use? :
 
   ┍━━ WARNING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
@@ -71,8 +74,8 @@ if not pl:
 else:
     threadsNum = int(input('\n• How many threads do you want to use? :\n» '))
 
+#start
 print('\n• Starting...')
-
-run(answersMAx, threadsNum, url, formData, pl)
-input('• Finished sending answers, press enter to exit :\n» ')
-quit()
+run(answersMax, threadsNum, url, formData, pl)
+input('• Finished sending answers, press any key to exit :\n» ')
+sys.exit()
