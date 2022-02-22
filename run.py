@@ -46,9 +46,13 @@ pl = []
 
 if proxies == 'y':
 
-    for line in open('proxylist.txt', 'r'):
-        pl.insert(0, line)
-    pl = [item.replace('\n', '') for item in pl]
+    try:
+        for line in open('proxylist.txt', 'r'):
+            pl.insert(0, line)
+        pl = [item.replace('\n', '') for item in pl]
+    except FileNotFoundError:
+        input('• [Error] Proxies file not found, press any key to exit :\n» ')
+        sys.exit()
 
     if not pl:
         input(
