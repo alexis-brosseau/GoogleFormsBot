@@ -28,10 +28,10 @@ try :
     with open('config.yaml') as configFile:
         config = yaml.load(configFile, Loader=yaml.FullLoader)
 except FileNotFoundError:
-    input('• [Error] Config file not found, press any key to exit :')
+    input('• [Error] Config file not found, press any key to exit :\n» ')
     sys.exit()
 except yaml.parser.ParserError:
-    input('• [Error] The url or formData is not valid, press any key to exit :')
+    input('• [Error] The url or formData is not valid, press any key to exit :\n» ')
     sys.exit()
 url = config['url']
 try :
