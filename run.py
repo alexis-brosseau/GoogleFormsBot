@@ -28,10 +28,10 @@ try :
     with open('config.yaml') as configFile:
         config = yaml.load(configFile, Loader=yaml.FullLoader)
 except FileNotFoundError:
-    input('• [Error] Config file not found, press any key to exit :\n» ')
+    input('\n• [Error] Config file not found, press any key to exit :\n» ')
     sys.exit()
 except yaml.parser.ParserError:
-    input('• [Error] The url or formData is not valid, press any key to exit :\n» ')
+    input('\n• [Error] The url or formData is not valid, press any key to exit :\n» ')
     sys.exit()
 url = config['url']
 try :
@@ -52,7 +52,7 @@ if proxies == 'y':
             pl.insert(0, line)
         pl = [item.replace('\n', '') for item in pl]
     except FileNotFoundError:
-        input('• [Error] Proxies file not found, press any key to exit :\n» ')
+        input('\n• [Error] Proxies file not found, press any key to exit :\n» ')
         sys.exit()
 
     if not pl:
