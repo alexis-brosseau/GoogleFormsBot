@@ -57,7 +57,7 @@ if proxies == 'y':
 
     if not pl:
         input(
-            '\n[WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
+            '\n• [WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
         )
 elif(proxies != 'n'):
     sys.exit()
