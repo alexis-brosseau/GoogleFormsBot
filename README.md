@@ -2,9 +2,9 @@
 
 ## Features: ##
 
-1. Multithreading
-2. Proxy
-3. Unparsed FormData
+- Multithreading
+- Proxy
+- Unparsed FormData
 
 ## Instalation: ##
 
