@@ -38,6 +38,7 @@ try :
     formData = dict(urllib.parse.parse_qsl(config['formData']))
 except AttributeError:
     formData = config['formData']
+if 'dlut' in formData: del formData['dlut']
 
 # Proxies
 proxies = input('• Do you want to use proxies? [y/n] :\n» ')
