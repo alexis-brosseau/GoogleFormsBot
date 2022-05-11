@@ -13,14 +13,14 @@ os.chdir(rPath)
 
 # Launch
 print('''
-       ________                     
-      / ____/ /___ _____________  __
-     / /_  / / __ `/ ___/ ___/ / / /
-    / __/ / / /_/ (__  |__  ) /_/ / 
-   /_/   /_/\__,_/____/____/\__, /  
-                           /____/   
-
-      Google Forms Bot v1.2.1
+  ██╗   ██╗ ██╗   ██████╗    ██████╗ 
+  ██║   ██║███║   ╚════██╗   ╚════██╗
+  ██║   ██║╚██║    █████╔╝    █████╔╝
+  ╚██╗ ██╔╝ ██║   ██╔═══╝    ██╔═══╝ 
+   ╚████╔╝  ██║██╗███████╗██╗███████╗
+    ╚═══╝   ╚═╝╚═╝╚══════╝╚═╝╚══════╝
+                              
+         Google Forms Bot
         https://flassy.xyz/\n''')
 
 # Load config
@@ -28,16 +28,17 @@ try :
     with open('config.yaml') as configFile:
         config = yaml.load(configFile, Loader=yaml.FullLoader)
 except FileNotFoundError:
-    input('• [Error] Config file not found, press any key to exit :')
+    input('\n• [Error] Config file not found, press any key to exit :\n» ')
     sys.exit()
 except yaml.parser.ParserError:
-    input('• [Error] The url or formData is not valid, press any key to exit :')
+    input('\n• [Error] The url or formData is not valid, press any key to exit :\n» ')
     sys.exit()
 url = config['url']
 try :
     formData = dict(urllib.parse.parse_qsl(config['formData']))
 except AttributeError:
     formData = config['formData']
+if 'dlut' in formData: del formData['dlut']
 
 # Proxies
 proxies = input('• Do you want to use proxies? [y/n] :\n» ')
@@ -46,13 +47,17 @@ pl = []
 
 if proxies == 'y':
 
-    for line in open('proxylist.txt', 'r'):
-        pl.insert(0, line)
-    pl = [item.replace('\n', '') for item in pl]
+    try:
+        for line in open('proxylist.txt', 'r'):
+            pl.insert(0, line)
+        pl = [item.replace('\n', '') for item in pl]
+    except FileNotFoundError:
+        input('\n• [Error] Proxies file not found, press any key to exit :\n» ')
+        sys.exit()
 
     if not pl:
         input(
-            '\n[WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
+            '\n• [WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
         )
 elif(proxies != 'n'):
     sys.exit()
@@ -77,5 +82,5 @@ else:
 #start
 print('\n• Starting...')
 run(answersMax, threadsNum, url, formData, pl)
-input('• Finished sending answers, press any key to exit :\n» ')
+input('\n\n• Finished sending answers, press any key to exit :\n» ')
 sys.exit()

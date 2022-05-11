@@ -1,12 +1,18 @@
 import requests
 import threading
 import random
+import time
+from datetime import timedelta
 
 awnsersSent = 0
 nPrint = 0
+startTime = 0
 
 # Run the script (Multithreaded)
 def run(answersMax, threadsNum, url, formData, proxyList):
+    global startTime
+    startTime = time.time()
+    
     threads = [threading.Thread(target=sendRequests, args=(answersMax, url, formData, proxyList,), daemon=True) for t in range(threadsNum)]
 
     for t in threads:
@@ -27,26 +33,34 @@ def sendRequests(answersMax, url, formData, proxyList):
             proxy = proxyList[rand]
             
             # Try with a proxy
-            try:
-                requests.get(url, proxies={'http': 'http://'+proxy, 'https': 'http://'+proxy, }, allow_redirects=False, data=formData, timeout=5)
-                printAwnser()
+            try: requests.get(url, proxies={'http': 'http://'+proxy, 'https': 'http://'+proxy, }, allow_redirects=False, data=formData, timeout=5)
                 
             # If a proxy is not working (Delete it from proxyList)
-            except:
-                if proxyList:
-                    del proxyList[rand]
+            except: 
+                try:
+                    if (proxyList and proxy == proxyList[rand]):
+                        del proxyList[rand]
+                        print(f'  [Unable to connect to {proxy}]' + '   ' * 30, end='\r\n')
+                except:
+                    pass
                 requests.post(url, allow_redirects=False, data=formData)
-                print('[Unable to connect to %s]' %(proxy))
-                printAwnser()
+                
         # Without proxies
         else:
             requests.post(url, allow_redirects=False, data=formData)
-            printAwnser()
+        printAwnser(answersMax)
     return()
 
 #Print total awnsers sent
-def printAwnser():
+def printAwnser(answersMax):
     global nPrint
+    global startTime
+    elapsedTime = str(timedelta(seconds=round(time.time() - startTime)))
     nPrint += 1
-    print('  %s answers sent' % (nPrint))
+    if (answersMax == 0): 
+        print(f'  {nPrint} answers sent | Time Elapsed:{elapsedTime}', end='\r')
+    else:
+        percent = (nPrint / answersMax) * 100
+        bar = '█' * int(percent) + '░' * (100 - int(percent))
+        print(f'  {bar} Progress: {nPrint}/{answersMax} | Time Elapsed: {elapsedTime}', end='\r')
     return()
