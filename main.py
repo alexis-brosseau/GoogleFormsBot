@@ -60,7 +60,7 @@ def printAwnser(answersMax):
     if (answersMax == 0): 
         print(f'  {nPrint} answers sent | Time Elapsed:{elapsedTime}', end='\r')
     else:
-        percent = (nPrint / answersMax) * 100
-        bar = '█' * int(percent) + '░' * (100 - int(percent))
+        percent = (nPrint / answersMax) * 50
+        bar = '█' * int(percent) + '░' * (50 - int(percent))
         print(f'  {bar} Progress: {nPrint}/{answersMax} | Time Elapsed: {elapsedTime}', end='\r')
     return()
