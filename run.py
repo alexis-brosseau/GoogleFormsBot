@@ -68,7 +68,7 @@ answersMax = int(input('\n• How many answers do you want to send? (0 will send
 # Number of treads
 if not pl:
     threadsNum = int(input('''
-  • How many threads do you want to use? :
+• How many threads do you want to use? :
 
   ┍━━ WARNING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
     Google may block you from sending requests if you send them too quickly
