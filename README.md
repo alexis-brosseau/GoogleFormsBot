@@ -2,9 +2,9 @@
 
 ## Features: ##
 
-- Multithreading
-- Proxy
-- Unparsed FormData
+- [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)à
+- [regex](https://pypi.org/project/regex/)
+- [requests](https://pypi.org/project/requests/)
 
 ## Instalation: ##
 
