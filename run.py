@@ -20,8 +20,8 @@ print('''
     ╚████╔╝  ██║██╗███████╗██╗██████╔╝
      ╚═══╝   ╚═╝╚═╝╚══════╝╚═╝╚═════╝
                               
-           GoogleFormsBot
-         https://flassy.xyz/\n''')
+             GoogleFormsBot
+           https://flassy.xyz/\n''')
 
 # Load config
 try :
