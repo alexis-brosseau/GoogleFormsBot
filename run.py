@@ -13,25 +13,25 @@ os.chdir(rPath)
 
 # Launch
 print('''
-  ██╗   ██╗ ██╗   ██████╗    ██████╗ 
-  ██║   ██║███║   ╚════██╗   ╚════██╗
-  ██║   ██║╚██║    █████╔╝    █████╔╝
-  ╚██╗ ██╔╝ ██║   ██╔═══╝     ╚═══██╗
-   ╚████╔╝  ██║██╗███████╗██╗██████╔╝
-    ╚═══╝   ╚═╝╚═╝╚══════╝╚═╝╚═════╝
+   ██╗   ██╗ ██╗   ██████╗    ██████╗ 
+   ██║   ██║███║   ╚════██╗   ╚════██╗
+   ██║   ██║╚██║    █████╔╝    █████╔╝
+   ╚██╗ ██╔╝ ██║   ██╔═══╝     ╚═══██╗
+    ╚████╔╝  ██║██╗███████╗██╗██████╔╝
+     ╚═══╝   ╚═╝╚═╝╚══════╝╚═╝╚═════╝
                               
-          GoogleFormsBot
-        https://flassy.xyz/\n''')
+           GoogleFormsBot
+         https://flassy.xyz/\n''')
 
 # Load config
 try :
     with open('config.yaml') as configFile:
         config = yaml.load(configFile, Loader=yaml.FullLoader)
 except FileNotFoundError:
-    input('\n• [Error] Config file not found, press any key to exit :\n» ')
+    input('\n • [Error] Config file not found, press any key to exit :\n » ')
     sys.exit()
 except yaml.parser.ParserError:
-    input('\n• [Error] The url or formData is not valid, press any key to exit :\n» ')
+    input('\n • [Error] The url or formData is not valid, press any key to exit :\n » ')
     sys.exit()
 url = config['url']
 try :
@@ -41,7 +41,7 @@ except AttributeError:
 if 'dlut' in formData: del formData['dlut']
 
 # Proxies
-proxies = input('• Do you want to use proxies? [y/n] :\n» ')
+proxies = input(' • Do you want to use proxies? [y/n] :\n » ')
 
 pl = []
 
@@ -52,35 +52,35 @@ if proxies == 'y':
             pl.insert(0, line)
         pl = [item.replace('\n', '') for item in pl]
     except FileNotFoundError:
-        input('\n• [Error] Proxies file not found, press any key to exit :\n» ')
+        input('\n • [Error] Proxies file not found, press any key to exit :\n » ')
         sys.exit()
 
     if not pl:
         input(
-            '\n• [WARNING] The proxylist file is empty, to continue without proxies press enter :\n» '
+            '\n • [WARNING] The proxylist file is empty, to continue without proxies press enter :\n » '
         )
 elif(proxies != 'n'):
     sys.exit()
 
 # Number of awnsers
-answersMax = int(input('\n• How many answers do you want to send? (0 will send requests indefinitely) :\n» '))
+answersMax = int(input('\n • How many answers do you want to send? (0 will send requests indefinitely) :\n » '))
 
 # Number of treads
 if not pl:
     threadsNum = int(input('''
-• How many threads do you want to use? :
+ • How many threads do you want to use? :
 
-  ┍━━ WARNING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
-    Google may block you from sending requests if you send them too quickly
-    over a long period of time. Without proxies, the recommended amount of
-    threads is 1 or 2. Consider using some proxies to avoid getting blocked.
-  ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
-  \n» '''))
+   ┍━━ WARNING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+     Google may block you from sending requests if you send them too quickly
+     over a long period of time. Without proxies, the recommended amount of
+     threads is 1 or 2. Consider using some proxies to avoid getting blocked.
+   ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+  \n » '''))
 else:
-    threadsNum = int(input('\n• How many threads do you want to use? :\n» '))
+    threadsNum = int(input('\n • How many threads do you want to use? :\n » '))
 
 #start
-print('\n• Starting...')
+print('\n • Starting...')
 run(answersMax, threadsNum, url, formData, pl)
-input('\n\n• Finished sending answers, press any key to exit :\n» ')
+input('\n\n • Finished sending answers, press any key to exit :\n » ')
 sys.exit()
