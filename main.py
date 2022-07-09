@@ -42,7 +42,7 @@ def sendRequests(answersMax, url, formData, proxyList):
             
             try:
                 if (proxyList and rProxy == proxyList[rand]):
-                    print(f'  [Unable to connect to {rProxy}]' + '   ' * 30, end='\r\n')
+                    print(f'   [Unable to connect to {rProxy}]' + '   ' * 30, end='\r\n')
                     del proxyList[rand]
             except:
                 pass
@@ -61,9 +61,9 @@ def printAwnser(answersMax):
     nPrint += 1
     
     if (answersMax == 0): 
-        print(f'  {nPrint} answers sent | Time Elapsed:{elapsedTime}', end='\r')
+        print(f'   {nPrint} answers sent | Time Elapsed:{elapsedTime}', end='\r')
     else:
         percent = (nPrint / answersMax) * 50
         bar = '█' * int(percent) + '░' * (50 - int(percent))
-        print(f'  {bar} Progress: {nPrint}/{answersMax} | Time Elapsed: {elapsedTime}', end='\r')
+        print(f'   {bar} Progress: {nPrint}/{answersMax} | Time Elapsed: {elapsedTime}', end='\r')
     return()
