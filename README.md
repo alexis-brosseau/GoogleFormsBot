@@ -3,7 +3,6 @@
 ## Features: ##
 
 - Multithreading
-- Proxy
 - Unparsed FormData
 
 ## Instalation: ##
